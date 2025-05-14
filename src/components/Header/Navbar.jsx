@@ -23,8 +23,8 @@ const Navbar = () => {
     return (
         <div className="navbar px-5 bg-[#1A1A1A] shadow-sm fixed">
             <div className="navbar-start">
-                {/* <a href='/home' className="text-xl text-white">Baizid Bostami.</a> */}
-                <Link to='home' className='cursor-pointer text-white'>Baizid Bostami.</Link>
+                <a href='home' className="text-xl text-white">Baizid Bostami.</a>
+                {/* <Link to='home' className='cursor-pointer text-white'>Baizid Bostami.</Link> */}
             </div>
 
             <div className="navbar-end">

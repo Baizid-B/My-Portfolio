@@ -8,22 +8,20 @@ import Contact from "../pages/Contact";
 import Loading from "../pages/LoadingPage/Loading";
 
 
+
 const Main = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        
-        const timer1 = setTimeout(() => {
-            setIsLoading(false);
-        }, 10000);
+    useEffect(() =>{
+        const time = setTimeout(() => {
+            setIsLoading(false)
+        }, 8500)
 
-        return () => {
-            clearTimeout(timer1)
-        };
-    }, []);
+        return () => clearTimeout(time)
+    },[])
 
     if (isLoading) {
-        return <Loading />;
+        return <Loading />
     }
 
     return (

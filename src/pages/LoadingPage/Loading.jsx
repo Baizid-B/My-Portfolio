@@ -1,23 +1,24 @@
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Loading = () => {
 
   return (
-        <div className="flex items-center justify-center h-screen bg-black text-white flex-col">
-            <h2 className="text-2xl font-medium">
-                Welcome to my website and I'm a{' '}
-                <span className="text-yellow-300">
-                    <Typewriter
-                    words={['Frontend Developer', 'UI/UX Designer', 'Problem Solver']}
-                    loop
+        <div className='fixed top-0 left-0 w-full h-screen text-white flex justify-center bg-gradient-to-r from-blue-500 to-black'>
+            <h1 style={{ margin: 'auto 0', fontWeight: '500', fontSize: '25px', fontFamily: 'monospace'}}>
+                Life is simple{' '}
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                    words={['Eat', 'Sleep', 'Code', 'Repeat!','Prayer']}
+                    loop={5}
                     cursor
-                    cursorStyle="_"
-                    typeSpeed={60}
-                    deleteSpeed={80}
+                    cursorStyle='_'
+                    typeSpeed={30}
+                    deleteSpeed={100}
                     delaySpeed={1000}
-                    />
-                </span>
-            </h2>
+                />
+            </h1>
+
         </div>
     );
 };
