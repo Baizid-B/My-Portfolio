@@ -34,7 +34,7 @@ const Navbar = () => {
         })
         gsap.from("#nav",{
             y: -100,
-            duration:1,
+            duration:1.50,
             delay:1.10
         })
         gsap.from('#navLinkY',{
