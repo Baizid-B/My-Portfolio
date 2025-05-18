@@ -1,5 +1,6 @@
 import bannerImg from '../../assets/banner/banner.png'
 import { Typewriter } from 'react-simple-typewriter'
+import SocialIcon from '../SocialIcon/SocialIcon';
 
 const Banner = () => {
     return (
@@ -32,7 +33,11 @@ const Banner = () => {
                 </div>
 
                 <div className=''>
-                    <img className='w-[696px] md:h-[720px] lg:h-[900px]' src={bannerImg} alt="" />
+                    <img className='w-[696px] md:h-[720px] lg:h-[1000px]' src={bannerImg} alt="" />
+
+                    <div className='hidden md:flex absolute md:top-70 md:right-15 lg:top-105 lg:right-20'>
+                        <SocialIcon />
+                    </div>
                 </div>
             </div>
     );
