@@ -1,7 +1,7 @@
 
 const Works = () => {
     return (
-        <div className="bg-amber-500 w-full min-h-screen">
+        <div className="bg-yellow-500 w-full min-h-screen">
             <h1>This is a About Pages</h1>
         </div>
     );

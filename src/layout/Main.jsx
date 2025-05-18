@@ -8,34 +8,33 @@ import Contact from "../pages/Contact";
 import Loading from "../pages/LoadingPage/Loading";
 
 
-
 const Main = () => {
-    const [isLoading, setIsLoading] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() =>{
-        const time = setTimeout(() => {
-            setIsLoading(false)
-        }, 8500)
+    // useEffect(() =>{
+    //     const time = setTimeout(() => {
+    //         setIsLoading(false)
+    //     }, 8500)
 
-        return () => clearTimeout(time)
-    },[])
+    //     return () => clearTimeout(time)
+    // },[])
 
-    if (isLoading) {
-        return <Loading />
-    }
+    // if (isLoading) {
+    //     return <Loading />
+    // }
 
     return (
         <>
-            <div>
+            <div className="">
                 <div className="">
                     <Navbar />
                 </div>
 
                 <div className="min-h-[calc(100vh-328px)]">
-                    <section className="pt-18" id="home"><Home /></section>
-                    <section className="pt-18" id="about"><Abouts /></section>
-                    <section className="pt-18" id="works"><Works /></section>
-                    <section className="pt-18" id="contact"><Contact /></section>
+                    <section className="" id="home"><Home /></section>
+                    <section className="" id="about"><Abouts /></section>
+                    <section className="" id="works"><Works /></section>
+                    <section className="" id="contact"><Contact /></section>
                 </div>
 
                 <Footer />
