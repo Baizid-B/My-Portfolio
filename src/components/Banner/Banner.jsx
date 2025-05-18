@@ -1,11 +1,35 @@
 import bannerImg from '../../assets/banner/banner.png'
 import { Typewriter } from 'react-simple-typewriter'
 import SocialIcon from '../SocialIcon/SocialIcon';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+import gsap from 'gsap';
 
 const Banner = () => {
+    const bannerRef = useRef()
+
+    useGSAP(() => {
+        gsap.from("#imgY",{
+            y: -1300,
+            duration:2.50,
+            delay:2,
+            rotate:360
+        })
+        gsap.from("#socialX",{
+            y: -1300,
+            duration:2.80,
+            delay:2.50
+        })
+        gsap.from("#text",{
+            x: -550,
+            duration:2.90,
+            delay:2.80
+        })
+    },{scope:bannerRef})
+
     return (
-            <div className="relative grid md:grid-cols-2 items-center mx-auto">
-                <div className="absolute -top-58 left-0 items-center md:static space-y-6 pl-12 pt-74">
+            <div ref={bannerRef} className="relative grid md:grid-cols-2 items-center mx-auto">
+                <div id='text' className="absolute -top-58 left-0 items-center md:static space-y-6 pl-12 pt-74">
 
                     <h1 className="uppercase ml-2 text-3xl font-bold text-[#9dd290]">hello</h1>
 
@@ -33,9 +57,9 @@ const Banner = () => {
                 </div>
 
                 <div className=''>
-                    <img className='w-[696px] md:h-[720px] lg:h-[1000px]' src={bannerImg} alt="" />
+                    <img id='imgY' className='w-[696px] md:h-[720px] lg:h-[1000px]' src={bannerImg} alt="" />
 
-                    <div className='hidden md:flex absolute md:top-70 md:right-15 lg:top-105 lg:right-20'>
+                    <div id='socialX' className='hidden md:flex absolute md:top-70 md:right-15 lg:top-105 lg:right-20'>
                         <SocialIcon />
                     </div>
                 </div>
