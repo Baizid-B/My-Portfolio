@@ -9,19 +9,19 @@ import Loading from "../pages/LoadingPage/Loading";
 
 
 const Main = () => {
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(() =>{
-    //     const time = setTimeout(() => {
-    //         setIsLoading(false)
-    //     }, 8500)
+    useEffect(() =>{
+        const time = setTimeout(() => {
+            setIsLoading(false)
+        }, 8500)
 
-    //     return () => clearTimeout(time)
-    // },[])
+        return () => clearTimeout(time)
+    },[])
 
-    // if (isLoading) {
-    //     return <Loading />
-    // }
+    if (isLoading) {
+        return <Loading />
+    }
 
     return (
         <>
