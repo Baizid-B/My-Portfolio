@@ -6,7 +6,7 @@ const Loading = () => {
   return (
         <div className='fixed top-0 left-0 w-full h-screen text-black flex justify-center bg-gradient-to-r from-[#9dd290] to-gray-300'>
             
-                <h1 style={{ margin: 'auto 0', fontWeight: '500', fontSize: '28px', fontFamily: 'monospace'}}>
+                <h1 style={{ margin: 'auto 0', fontWeight: '500', fontSize: '24px', fontFamily: 'monospace'}}>
                 Life is simple{' '}
                 <Typewriter
                     words={['Eat', 'Sleep', 'Code', 'Repeat!','Prayer']}
