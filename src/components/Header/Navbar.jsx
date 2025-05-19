@@ -47,7 +47,7 @@ const Navbar = () => {
 
 
     return (
-        <div ref={navRef} className="fixed z-10 top-0 inset-x-0 flex items-center justify-between rounded-md lg:w-[96%] mx-auto py-5 lg:mt-8 px-5 bg-gradient-to-r from-black to-[#9dd290] shadow-sm">
+        <div ref={navRef} className="fixed z-30 top-0 inset-x-0 flex items-center justify-between rounded-md lg:w-[96%] mx-auto py-5 lg:mt-8 px-5 bg-gradient-to-r from-black to-[#9dd290] shadow-sm">
             <div id='nav' className="navar-start">
                 <a href='home' className="md:text-2xl text-white font-semibold">Baizid Bostami.</a>
             </div>

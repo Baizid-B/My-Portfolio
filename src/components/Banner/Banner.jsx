@@ -29,7 +29,7 @@ const Banner = () => {
 
     return (
             <div ref={bannerRef} className="relative grid md:grid-cols-2 items-center mx-auto">
-                <div id='text' className="absolute -top-58 left-0 items-center md:static space-y-6 pl-12 pt-74">
+                <div id='text' className="absolute z-10 -top-58 left-0 items-center md:static space-y-6 pl-12 pt-74">
 
                     <h1 className="uppercase ml-2 text-3xl font-bold text-[#9dd290]">hello</h1>
 

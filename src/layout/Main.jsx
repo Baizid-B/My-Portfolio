@@ -26,10 +26,7 @@ const Main = () => {
     return (
         <>
             <div className="">
-                <div className="">
-                    <Navbar />
-                </div>
-
+                <Navbar />
                 <div className="min-h-[calc(100vh-328px)]">
                     <section className="" id="home"><Home /></section>
                     <section className="" id="about"><Abouts /></section>
