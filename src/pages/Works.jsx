@@ -1,36 +1,38 @@
 
-import html from '../../src/assets/skills/html.webp'
-import css from '../../src/assets/skills/CSS3.webp'
-import js from '../../src/assets/skills/js.webp'
-import react from '../../src/assets/skills/react.webp'
+import BistroBossImg from '../../src/assets/work/BistroBoss.webp'
+import coffeStoreImg from '../../src/assets/work/coffeStore.webp'
+import coinImg from '../../src/assets/work/coin.webp'
+import gadgetHeavenImg from '../../src/assets/work/gadgetHeaven.webp'
 import { useState } from 'react'
 import SectionTitle from '../components/SectionTilte/SectionTilte'
 import CardEffect from '../components/CardEffect/CardEffect'
+import { FaArrowLeft, FaArrowRight} from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 const images = [
     {
-        src: html,
-        title:'white kait cap',
-        description: "Lorem ipsum dolor sit amet.",
-        link:"#"
+        src: BistroBossImg,
+        title:'Bistro-Boss',
+        description: "Delighting your taste buds with every bite – Bistro Boss Restaurant!",
+        link:"https://bistro-boss-6694b.web.app/"
     },
     {
-        src: css,
-        title:'white kait cap',
-        description: "Lorem ipsum dolor sit amet.",
-        link:"#"
+        src: coffeStoreImg,
+        title:'coffee_store',
+        description: "Brewing happiness in every cup – Coffee Store!",
+        link:"https://coffeestore-vibe.netlify.app/"
     },
     {
-        src: js,
-        title:'white kait cap',
-        description: "Lorem ipsum dolor sit amet.",
-        link:"#"
+        src: coinImg,
+        title:'Dream 11',
+        description: "Create your fantasy team and win big with Dream11!",
+        link:"https://gorgeous-creponne-174715.netlify.app/"
     },
     {
-        src: react,
-        title:'white kait cap',
-        description: "Lorem ipsum dolor sit amet.",
-        link:"#"
+        src: gadgetHeavenImg,
+        title:'Gadget Heaven',
+        description: "Where technology meets desire – Gadget Heaven!",
+        link:"https://magnificent-boba-e4e74c.netlify.app/"
     }
 ]
 
@@ -58,8 +60,8 @@ const Works = () => {
     }
 
     return (
-        <div className='min-h-screen pt-30 max-w-[1440px] mx-auto px-12'>
-            <SectionTitle title={"02"} subTitle={"Aboout Me."}></SectionTitle>
+        <div className='pt-30 max-w-[1440px] mx-auto px-12'>
+            <SectionTitle title={"02"} subTitle={"Selected Works."}></SectionTitle>
 
             <div className='grid grid-cols-1 justify-center md:grid-cols-2 gap-8 my-24'>
                 {
@@ -76,31 +78,30 @@ const Works = () => {
             {
                 isOpenModal && (
                     <div className='fixed inset-0 z-30 bg-[#000000ee] flex justify-center items-center'>
-                        <button className="absolute top-4 right-4 text-white text-3xl font-bold" onClick={close}>x</button>
+                        <button className="absolute top-4 right-4 text-white text-3xl font-bold cursor-pointer" onClick={close}><IoClose /></button>
 
-                        <button onClick={imgBack} className='absolute left-4 text-white'>back</button>
-                        <button onClick={imgNext} className='absolute right-4 text-white'>next</button>
+                        <button onClick={imgBack} className='absolute left-4 text-white text-3xl cursor-pointer'><FaArrowLeft /></button>
+                        <button onClick={imgNext} className='absolute right-4 text-white text-3xl cursor-pointer'>< FaArrowRight/></button>
 
-                        <div className="max-w-4xl text-center px-4">
+                        <div className="max-w-6xl text-center px-4">
 
                             <img src={images[imgCurrent].src} alt="" />
 
-                            <h3 className="text-white text-2xl font-semibold mb-2">
+                            <h3 className="text-white text-4xl font-semibold my-2">
                                 {images[imgCurrent].title}
                             </h3>
 
-                            <p className="text-gray-300 mb-4">
+                            <p className="text-white text-2xl my-4">
                                 {images[imgCurrent].description}
                             </p>
 
-                            <a href={images[imgCurrent].link} className="text-red-400 underline hover:text-red-600 transition">
+                            <a href={images[imgCurrent].link} target='_blank' className="text-[#97c65a] font-bold underline hover:text-green-500 transition">
                                 Project Link
                             </a>
                         </div>
                     </div>
                 )
             }
-
         </div>
     );
 };

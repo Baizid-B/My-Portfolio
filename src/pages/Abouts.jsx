@@ -4,7 +4,7 @@ import SwiperSkill from "../components/SwiperSkill/SwiperSkill";
 
 const Abouts = () => {
     return (
-        <div className="min-h-screen pt-30 max-w-[1440px] mx-auto px-8 space-y-5 md:px-8">
+        <div className="py-30 max-w-[1440px] mx-auto px-8 space-y-5 md:px-8">
             <SectionTitle title={"01"} subTitle={"About Me."} />
 
             <h1 className="text-xl md:text-3xl text-left md:px-0 ">I’m an aspiring front-end developer passionate about building responsive and user-friendly web interfaces. Although
