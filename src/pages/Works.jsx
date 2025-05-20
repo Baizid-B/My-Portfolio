@@ -9,6 +9,8 @@ import CardEffect from '../components/CardEffect/CardEffect'
 import { FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
+
+
 const images = [
     {
         src: BistroBossImg,
@@ -36,7 +38,10 @@ const images = [
     }
 ]
 
+
+
 const Works = () => {
+
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [imgCurrent, setImgCurrent] = useState(0)
 

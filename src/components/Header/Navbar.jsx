@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaBars } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
-import { Link } from 'react-scroll';
+import { Link, scrollSpy } from 'react-scroll';
 import "../../components/Header/Navbar.css"
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -16,10 +16,10 @@ const Navbar = () => {
     const close = () => setOpen(false)
 
     const link = <>
-        <li><Link onClick={close} to="home" activeClass="active-link" spy={true} smooth={true} duration={500}>home</Link></li>
-        <li><Link onClick={close} to="about" activeClass="active-link" spy={true} smooth={true} duration={500}>about</Link></li>
-        <li><Link onClick={close} to="works" activeClass="active-link" spy={true} smooth={true} duration={500}>works</Link></li>
-        <li><Link onClick={close} to="contact" activeClass="active-link" spy={true} smooth={true} duration={500}>contact</Link></li>
+        <li className='navLinkY'><Link onClick={close} to="home" activeClass="active-link" spy={true} smooth={true} duration={500}>home</Link></li>
+        <li className='navLinkY'><Link onClick={close} to="about" activeClass="active-link" spy={true} smooth={true} duration={500}>about</Link></li>
+        <li className='navLinkY'><Link onClick={close} to="works" activeClass="active-link" spy={true} smooth={true} duration={500}>works</Link></li>
+        <li className='navLinkY'><Link onClick={close} to="contact" activeClass="active-link" spy={true} smooth={true} duration={500}>contact</Link></li>
         
     </>
 
@@ -27,22 +27,33 @@ const Navbar = () => {
     const navRef = useRef()
 
     useGSAP(() =>{
-        gsap.from(navRef.current,{
-            y: -120,
+        var tl = gsap.timeline()
+        tl.from(navRef.current,{
+            y: -20,
+            opacity:0,
             duration:0.60,
             delay:1
         })
-        gsap.from("#nav",{
-            y: -100,
-            duration:1.50,
-            delay:1.10
+        tl.from("#nav",{
+           y: -20,
+           opacity:0,
+           duration:0.60,
         })
-        gsap.from('#navLinkY',{
-            y: -120,
-            duration:2.20,
-            delay:1.20
+        tl.from('.navLinkY',{
+            y:-20,
+            opacity:0,
+            duration:0.60,
+            stagger:0.3
         })
     },{scope:navRef})
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            scrollSpy.update();
+        },1000)
+
+        return () => clearTimeout(timeout)
+    }, [])
 
 
 
@@ -53,7 +64,7 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <div id='navLinkY' className='hidden lg:flex text-white uppercase'>
+                <div className='hidden lg:flex text-white uppercase'>
                     <ul className='menu menu-horizontal text-2xl'>
                         {link}
                     </ul>

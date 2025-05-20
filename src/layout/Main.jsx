@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Footer from "../components/Header/Footer";
 import Navbar from "../components/Header/Navbar";
-import Abouts from "../pages/Abouts";
-import Home from "../pages/Home";
-import Works from "../pages/Works";
-import Contact from "../pages/Contact";
 import Loading from "../pages/LoadingPage/Loading";
 import { Toaster } from 'react-hot-toast';
+import { lazy } from "react";
+import { Element } from "react-scroll";
+
+const Home = lazy(() => import("../pages/Home"));
+const Abouts = lazy(() => import("../pages/Abouts"));
+const Works = lazy(() => import("../pages/Works"));
+const Contact = lazy(() => import("../pages/Contact"));
 
 
 const Main = () => {
@@ -26,18 +29,18 @@ const Main = () => {
 
     return (
         <>
-            <div className="">
-                <Toaster />
-                <Navbar />
-                <div className="min-h-[calc(100vh-328px)]">
-                    <section className="" id="home"><Home /></section>
-                    <section className="" id="about"><Abouts /></section>
-                    <section className="" id="works"><Works /></section>
-                    <section className="" id="contact"><Contact /></section>
-                </div>
-
-                <Footer />
+            <Toaster />
+            <Navbar />
+            <div className="min-h-[calc(100vh-328px)]">
+                <Suspense fallback={<Loading />}>
+                    <Element name='home' id="home"><Home /></Element>
+                    <Element name='about' id="about"><Abouts /></Element>
+                    <Element name='works' id="works"><Works /></Element>
+                    <Element name='contact' id="contact"><Contact /></Element>
+                </Suspense>
             </div>
+
+            <Footer />
         </>
     );
 };

@@ -1,10 +1,32 @@
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from "@gsap/react";
 import SectionTitle from "../components/SectionTilte/SectionTilte";
 import SwiperSkill from "../components/SwiperSkill/SwiperSkill";
+import { useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Abouts = () => {
+
+    const aboutRef = useRef()
+
+    useGSAP(() =>{
+
+        gsap.from(aboutRef.current,{
+            y:100,
+            opacity: 0,
+            duration:0.60,
+            delay:0.50,
+            scrollTrigger:{
+                trigger:aboutRef.current,
+                toggleActions: "play none none reset",
+            }
+        })
+    },{scope:aboutRef})
+
     return (
-        <div className="py-30 max-w-[1440px] mx-auto px-8 space-y-5 md:px-8">
+        <div ref={aboutRef} className="pt-30 max-w-[1440px] mx-auto px-8 space-y-5 md:px-8">
             <SectionTitle title={"01"} subTitle={"About Me."} />
 
             <h1 className="text-xl md:text-3xl text-left md:px-0 ">I’m an aspiring front-end developer passionate about building responsive and user-friendly web interfaces. Although

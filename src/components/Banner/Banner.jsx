@@ -9,21 +9,25 @@ const Banner = () => {
     const bannerRef = useRef()
 
     useGSAP(() => {
-        gsap.from("#imgY",{
-            y: -1300,
-            duration:2.50,
-            delay:2,
-            rotate:360
+        var tl = gsap.timeline()
+
+        tl.from("#text",{
+            x: -50,
+            opacity:0,
+            duration:1.80,
+            delay:1.20
         })
-        gsap.from("#socialX",{
-            y: -1300,
-            duration:2.80,
-            delay:2.50
+
+        tl.from("#imgY",{
+            opacity:0,
+            duration:1.80,
+            scale:0.5
         })
-        gsap.from("#text",{
-            x: -550,
-            duration:2.90,
-            delay:2.80
+        
+        tl.from("#socialX",{
+            y: -100,
+            opacity:0,
+            duration:1.80,
         })
     },{scope:bannerRef})
 
@@ -51,8 +55,8 @@ const Banner = () => {
                     </div>
 
                     <div className='flex flex-col lg:flex-row items-baseline lg:items-center mt-20 gap-6 '>
-                        <button className='btn border-none shadow-none bg-[#9dd290] text-white text-xl p-8'><a href="#about">More About Me</a></button>
-                        <button className='btn border-none shadow-none bg-black text-white text-xl p-8'><a href="#contact">Get In Touch</a></button>
+                        <a href="#about" className='cursor-pointer text-xl px-5 py-4 hover:outline-1 hover:bg-transparent hover:text-black shadow-none bg-[#9dd290] text-white'>More About Me</a>
+                        <a href="#contact" className='cursor-pointer outline-1 hover:bg-black hover:text-white font-bold rounded-xs shadow-none text-black text-xl px-5 py-4'>Get In Touch</a>
                     </div>
                 </div>
 
