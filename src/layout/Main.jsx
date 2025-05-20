@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Works from "../pages/Works";
 import Contact from "../pages/Contact";
 import Loading from "../pages/LoadingPage/Loading";
+import { Toaster } from 'react-hot-toast';
 
 
 const Main = () => {
@@ -26,6 +27,7 @@ const Main = () => {
     return (
         <>
             <div className="">
+                <Toaster />
                 <Navbar />
                 <div className="min-h-[calc(100vh-328px)]">
                     <section className="" id="home"><Home /></section>

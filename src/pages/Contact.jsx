@@ -1,22 +1,37 @@
 import SectionTitle from "../components/SectionTilte/SectionTilte";
 import { SiMinutemailer } from "react-icons/si";
 import { IoMdCall } from "react-icons/io";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+import toast from "react-hot-toast";
 
 
 const Contact = () => {
-    const handlSubmitMessage = e =>{
-        e.preventDefault()
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const textare = e.target.textare.value;
+    const form = useRef()
 
-        console.log("message:", name,email,textare);
-        
+    const handlSubmitMessage = (e) =>{
+        e.preventDefault()
+       
+        emailjs
+        .sendForm('service_z5zi9rr', 'template_pdy44sh', form.current, 'ykOAjPE1qalwH_0HL')
+        .then(
+        (result) => {
+          console.log('Success:', result.text);
+          toast.success('Email sent successfully!');
+        },
+        (error) => {
+          console.log('Error:', error.text);
+          toast.error('Email not sent!');
+        }
+      );
+
         e.target.reset()
     }
     return (
         <div className="max-w-[1440px] mx-auto px-12 pt-30 mb-12">
+            
             <SectionTitle title={"03"} subTitle={"Get In Teuch."}></SectionTitle>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-3.5">
                 <div className="bg-white space-y-8 px-2 pt-4">
                     <p className="text-3xl font-bold">Feel free to reach out for any inquiries or feedback!</p>
@@ -30,14 +45,14 @@ const Contact = () => {
 
                     <div className="card bg-base-100 shadow-2xl">
                         <div className="card-body">
-                            <form onSubmit={handlSubmitMessage} className="space-y-12">
-                                <input type="text" name="name" className="w-full input border focus:outline-none focus:border-black" placeholder="Your Name" />
+                            <form ref={form}  onSubmit={handlSubmitMessage} className="space-y-12">
+                                <input type="text" name="user_name" className="w-full input border focus:outline-none focus:border-black p-6 text-xl" placeholder="Your Name"  required/>
 
-                                <input type="email" name="email" className="w-full input border focus:outline-none focus:border-black" placeholder="Your Email" />
+                                <input type="email" name="user_email" className="w-full input border focus:outline-none focus:border-black p-6 text-xl" placeholder="Your Email"  required/>
 
-                                <textarea className="w-full input py-2 border focus:outline-none focus:border-black" name="textare" placeholder="Type your message here..."></textarea>
+                                <textarea name="message" className="w-full input border focus:outline-none focus:border-black px-5 py-2 text-xl" placeholder="Type your message here..." required></textarea>
 
-                                <button className="btn btn-neutral mt-4">Push the button and send your message</button>
+                                <button type="submit" className="btn btn-neutral mt-4">send your message</button>
                             </form>
                         </div>
                     </div>
