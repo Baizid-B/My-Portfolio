@@ -34,17 +34,15 @@ Welcome to my **React-based Portfolio Website**! This project showcases my work,
 
 ## 📁 Folder Structure (Simplified)
 
-MY-WEBSITE/
-├── dist/ # Build output
-├── node_modules/ # Project dependencies
-├── public/ # Static assets
-├── src/ # Source code
-│ ├── assets/ # Images, logos, etc.
-│ ├── components/ # Reusable UI components
-│ ├── layout/ # Page layout/wrappers
-│ ├── pages/ # Main pages
-│ ├── index.css # Global styles
-│ └── main.jsx # App entry point
+MY-WEBSITE
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── layout/
+│ ├── pages/
+│ ├── index.css
+│ └── main.jsx
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
