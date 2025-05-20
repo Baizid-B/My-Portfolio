@@ -1,12 +1,54 @@
-# React + Vite
+## Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌐 Live Link: https://baizid-bostami.netlify.app/
 
-Currently, two official plugins are available:
+Welcome to my **React-based Portfolio Website**! This project showcases my work, skills, and projects as a frontend developer. It is built with a modern tech stack to deliver a fast, responsive, and visually engaging user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** [React.js](https://reactjs.org/)
+- **Language:** JavaScript (ES6+)
+- **UI Design:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Hamburger Menu:** [hamburger-react](https://github.com/luukdv/hamburger-react)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✨ Animations & Effects
+
+- 🎞️ [GSAP](https://greensock.com/gsap/)
+- 🎬 [Framer Motion](https://www.framer.com/motion/)
+- 🏃 [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee)
+- 🔔 [React Hot Toast](https://react-hot-toast.com/)
+- 🔽 [React Scroll](https://www.npmjs.com/package/react-scroll)
+- ⌨️ [React Simple Typewriter](https://www.npmjs.com/package/react-simple-typewriter)
+- 🖱️ [Swiper.js](https://swiperjs.com/)
+
+## 📸 Features
+
+- 🔥 Smooth and interactive animations
+- 📱 Fully responsive layout for all devices
+- 🧭 Intuitive navigation with hamburger menu
+- 💬 Real-time toasts for interactions
+- 🔠 Typewriter effect for text highlights
+- 🔁 Horizontal marquees and carousels
+- 🌀 Scroll-based transitions and effects
+
+## 📁 Folder Structure (Simplified)
+
+MY-WEBSITE/
+├── dist/ # Build output
+├── node_modules/ # Project dependencies
+├── public/ # Static assets
+├── src/ # Source code
+│ ├── assets/ # Images, logos, etc.
+│ ├── components/ # Reusable UI components
+│ ├── layout/ # Page layout/wrappers
+│ ├── pages/ # Main pages
+│ ├── index.css # Global styles
+│ └── main.jsx # App entry point
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
