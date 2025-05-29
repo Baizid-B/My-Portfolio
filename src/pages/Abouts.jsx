@@ -35,7 +35,7 @@ const Abouts = () => {
                 Let me know if you'd like to include details about personal projects or tools you’re familiar with (like GitHub ). 
             </h1>
             <div className="my-20 flex items-center">
-                <button className="bg-[#9dd290] text-black font-extralight rounded-sm text-xl px-8 py-4 uppercase cursor-pointer"><a href="https://drive.google.com/file/d/14LWeXgcwwxBe2YMuxnHpQ3xn7mIs_rEY/view?usp=sharing" target="_blank">Get my cv</a></button>
+                <button className="bg-[#9dd290] text-black font-extralight rounded-sm text-xl px-8 py-4 uppercase cursor-pointer"><a href="https://drive.google.com/file/d/1H9laBE_yKOahK9JdH5TEF4MSHX2iDmJC/view?usp=sharing" target="_blank">Get my cv</a></button>
                 <div className="border bg-black w-48"></div>
             </div>
 
